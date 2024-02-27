@@ -40,13 +40,13 @@ const BetSlipComponent = ({
     totalStake,
   } = useBetSlip();
   const [multiStake, setMultiStake] = useState(0);
-  const [receiptOpen, setReceiptOpen] = useState(false); // State for controlling the receipt dialog
+  const [receiptOpen, setReceiptOpen] = useState(false);
   const [receiptData, setReceiptData] = useState<
     | {
         [key: string]: string | number | { [key: string]: string | number };
       }
     | any
-  >(null); // State for storing receipt data
+  >(null);
   const handleRemoveSelection = (optionId: string) => {
     removeSelection(optionId);
   };

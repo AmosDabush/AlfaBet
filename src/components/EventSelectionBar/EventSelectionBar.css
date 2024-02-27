@@ -4,24 +4,24 @@
     align-items: center;
     position: relative;
     padding: 10px 0 10px 0;
-  }
-  
-  .eventHeader {
+}
+
+.eventHeader {
     margin-bottom: 10px;
     font-size: 1.2rem;
-  }
-  
-  .eventButtonContainer {
+}
+
+.eventButtonContainer {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-  }
-  
-  .eventButtonContainer::-webkit-scrollbar {
+}
+
+.eventButtonContainer::-webkit-scrollbar {
     display: none;
-  }
-  
-  .eventButton {
+}
+
+.eventButton {
     background-color: #ffffff;
     color: #333;
     padding: 8px 16px;
@@ -33,26 +33,25 @@
     width: max-content;
     font-size: 10px;
     white-space: nowrap;
-  }
-  
-  .eventButton.selectedEvent {
+}
+
+.eventButton.selectedEvent {
     color: #ff0000;
-  }
-  
-  .arrowBtn{
+}
+
+.arrowBtn {
     font-size: 1.5rem;
     color: #000000;
     cursor: pointer;
     transition: color 0.3s;
-  }
-  
-  .arrowBtn.left {
+}
+
+.arrowBtn.left {
     position: absolute;
     left: 10px;
-  }
-  
-  .arrowBtn.right {
+}
+
+.arrowBtn.right {
     position: absolute;
     right: 10px;
-  }
-  
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Event, BetSelection } from "../../types/contextTypes"; // Import your types
+import { Event, BetSelection } from "../../types/contextTypes";
 import EventItem from "../EventItem/EventItem";
 
 interface EventsDisplayProps {

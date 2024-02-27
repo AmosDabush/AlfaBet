@@ -25,7 +25,6 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
     return null;
   }
 
-  // Calculate total odds
   const totalOdds = eventSelections.reduce(
     (total, selection) => total * selection.odds,
     1,
@@ -48,7 +47,7 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
         {eventSelections.map((selection, sIndex) => (
           <li key={sIndex} className="timeline-item">
             <div className="timeline-icon-wrapper">
-              <div className="timeline-icon"></div>
+              <div className="timeline-icon">-</div>
             </div>
             <div className="timeline-content">
               <div className="betDetails">
