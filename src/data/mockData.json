@@ -810,101 +810,585 @@
             ]
           }
         ]
-      }],"baseball": [
-        {
-          "eventId": "ba1",
-          "eventName": "Cubs vs Cardinals",
-          "eventStatus": "open",
-          "markets": [
-            {
-              "marketId": "CUBS-CARDINALS-001",
-              "title": "Full Time Result",
-              "options": [
-                {
-                  "optionId": "CUBS-CARDINALS-001-01",
-                  "name": "Cubs to Win",
-                  "odds": 2.0
-                },
-                {
-                  "optionId": "CUBS-CARDINALS-001-02",
-                  "name": "Cardinals to Win",
-                  "odds": 1.8
-                }
-              ]
-            },
-            {
-              "marketId": "CUBS-CARDINALS-002",
-              "title": "Total Runs Over/Under",
-              "options": [
-                {
-                  "optionId": "CUBS-CARDINALS-002-01",
-                  "name": "Over 8.5",
-                  "odds": 1.9
-                },
-                {
-                  "optionId": "CUBS-CARDINALS-002-02",
-                  "name": "Under 8.5",
-                  "odds": 1.9
-                }
-              ]
-            },
-            {
-              "marketId": "CUBS-CARDINALS-003",
-              "title": "Player Props",
-              "options": [
-                {
-                  "optionId": "CUBS-CARDINALS-003-01",
-                  "name": "Anthony Rizzo Over 1.5 Hits",
-                  "odds": 2.0
-                },
-                {
-                  "optionId": "CUBS-CARDINALS-003-02",
-                  "name": "Nolan Arenado Over 0.5 Home Runs",
-                  "odds": 3.0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "eventId": "ba2",
-          "eventName": "Yankees vs Red Sox",
-          "eventStatus": "open",
-          "markets": [
-            {
-              "marketId": "YANKEES-REDSOX-001",
-              "title": "Full Time Result",
-              "options": [
-                {
-                  "optionId": "YANKEES-REDSOX-001-01",
-                  "name": "Yankees to Win",
-                  "odds": 1.7
-                },
-                {
-                  "optionId": "YANKEES-REDSOX-001-02",
-                  "name": "Red Sox to Win",
-                  "odds": 2.1
-                }
-              ]
-            },
-            {
-              "marketId": "YANKEES-REDSOX-002",
-              "title": "Total Runs Over/Under",
-              "options": [
-                {
-                  "optionId": "YANKEES-REDSOX-002-01",
-                  "name": "Over 9.5",
-                  "odds": 1.8
-                },
-                {
-                  "optionId": "YANKEES-REDSOX-002-02",
-                  "name": "Under 9.5",
-                  "odds": 2.0
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      }
+    ],
+    "baseball": [
+      {
+        "eventId": "ba1",
+        "eventName": "Cubs vs Cardinals",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "CUBS-CARDINALS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "CUBS-CARDINALS-001-01",
+                "name": "Cubs to Win",
+                "odds": 2.0
+              },
+              {
+                "optionId": "CUBS-CARDINALS-001-02",
+                "name": "Cardinals to Win",
+                "odds": 1.8
+              }
+            ]
+          },
+          {
+            "marketId": "CUBS-CARDINALS-002",
+            "title": "Total Runs Over/Under",
+            "options": [
+              {
+                "optionId": "CUBS-CARDINALS-002-01",
+                "name": "Over 8.5",
+                "odds": 1.9
+              },
+              {
+                "optionId": "CUBS-CARDINALS-002-02",
+                "name": "Under 8.5",
+                "odds": 1.9
+              }
+            ]
+          },
+          {
+            "marketId": "CUBS-CARDINALS-003",
+            "title": "Player Props",
+            "options": [
+              {
+                "optionId": "CUBS-CARDINALS-003-01",
+                "name": "Anthony Rizzo Over 1.5 Hits",
+                "odds": 2.0
+              },
+              {
+                "optionId": "CUBS-CARDINALS-003-02",
+                "name": "Nolan Arenado Over 0.5 Home Runs",
+                "odds": 3.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "ba2",
+        "eventName": "Yankees vs Red Sox",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "YANKEES-REDSOX-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "YANKEES-REDSOX-001-01",
+                "name": "Yankees to Win",
+                "odds": 1.7
+              },
+              {
+                "optionId": "YANKEES-REDSOX-001-02",
+                "name": "Red Sox to Win",
+                "odds": 2.1
+              }
+            ]
+          },
+          {
+            "marketId": "YANKEES-REDSOX-002",
+            "title": "Total Runs Over/Under",
+            "options": [
+              {
+                "optionId": "YANKEES-REDSOX-002-01",
+                "name": "Over 9.5",
+                "odds": 1.8
+              },
+              {
+                "optionId": "YANKEES-REDSOX-002-02",
+                "name": "Under 9.5",
+                "odds": 2.0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "golf": [
+      {
+        "eventId": "g1",
+        "eventName": "The Masters Tournament",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "GOL-001",
+            "title": "Winner",
+            "options": [
+              {
+                "optionId": "GOL-001-01",
+                "name": "Tiger Woods to Win",
+                "odds": 10.0
+              },
+              {
+                "optionId": "GOL-001-02",
+                "name": "Rory McIlroy to Win",
+                "odds": 8.5
+              },
+              {
+                "optionId": "GOL-001-03",
+                "name": "Dustin Johnson to Win",
+                "odds": 9.0
+              }
+            ]
+          },
+          {
+            "marketId": "GOL-002",
+            "title": "Top European Player",
+            "options": [
+              {
+                "optionId": "GOL-002-01",
+                "name": "Jon Rahm",
+                "odds": 5.0
+              },
+              {
+                "optionId": "GOL-002-02",
+                "name": "Justin Rose",
+                "odds": 7.0
+              },
+              {
+                "optionId": "GOL-002-03",
+                "name": "Rory McIlroy",
+                "odds": 6.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "g2",
+        "eventName": "US Open",
+        "eventStatus": "close",
+        "markets": [
+          {
+            "marketId": "GOL-003",
+            "title": "Winner",
+            "options": [
+              {
+                "optionId": "GOL-003-01",
+                "name": "Brooks Koepka to Win",
+                "odds": 7.0
+              },
+              {
+                "optionId": "GOL-003-02",
+                "name": "Justin Thomas to Win",
+                "odds": 6.5
+              },
+              {
+                "optionId": "GOL-003-03",
+                "name": "Dustin Johnson to Win",
+                "odds": 8.0
+              }
+            ]
+          },
+          {
+            "marketId": "GOL-004",
+            "title": "Top Amateur",
+            "options": [
+              {
+                "optionId": "GOL-004-01",
+                "name": "John Doe",
+                "odds": 15.0
+              },
+              {
+                "optionId": "GOL-004-02",
+                "name": "Jane Smith",
+                "odds": 12.0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "racing": [
+      {
+        "eventId": "r1",
+        "eventName": "Kentucky Derby",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "ROO-012",
+            "title": "Race Winner",
+            "options": [
+              {
+                "optionId": "ROO-012-01",
+                "name": "Horse A to Win",
+                "odds": 5.2
+              },
+              {
+                "optionId": "ROO-012-02",
+                "name": "Horse B to Win",
+                "odds": 4.1
+              },
+              {
+                "optionId": "ROO-012-03",
+                "name": "Horse C to Win",
+                "odds": 6.5
+              }
+            ]
+          },
+          {
+            "marketId": "ROO-013",
+            "title": "Top 3 Finish",
+            "options": [
+              {
+                "optionId": "ROO-013-01",
+                "name": "Yes",
+                "odds": 2.3
+              },
+              {
+                "optionId": "ROO-013-02",
+                "name": "No",
+                "odds": 1.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "r2",
+        "eventName": "Grand National",
+        "eventStatus": "close",
+        "markets": [
+          {
+            "marketId": "ROO-014",
+            "title": "Race Winner",
+            "options": [
+              {
+                "optionId": "ROO-014-01",
+                "name": "Horse X to Win",
+                "odds": 6.2
+              },
+              {
+                "optionId": "ROO-014-02",
+                "name": "Horse Y to Win",
+                "odds": 4.5
+              },
+              {
+                "optionId": "ROO-014-03",
+                "name": "Horse Z to Win",
+                "odds": 5.9
+              }
+            ]
+          },
+          {
+            "marketId": "ROO-015",
+            "title": "Top 3 Finish",
+            "options": [
+              {
+                "optionId": "ROO-015-01",
+                "name": "Yes",
+                "odds": 2.1
+              },
+              {
+                "optionId": "ROO-015-02",
+                "name": "No",
+                "odds": 1.6
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "r3",
+        "eventName": "Preakness Stakes",
+        "eventStatus": "delayed",
+        "markets": [
+          {
+            "marketId": "ROO-016",
+            "title": "Race Winner",
+            "options": [
+              {
+                "optionId": "ROO-016-01",
+                "name": "Horse P to Win",
+                "odds": 4.9
+              },
+              {
+                "optionId": "ROO-016-02",
+                "name": "Horse Q to Win",
+                "odds": 5.6
+              },
+              {
+                "optionId": "ROO-016-03",
+                "name": "Horse R to Win",
+                "odds": 6.2
+              }
+            ]
+          },
+          {
+            "marketId": "ROO-017",
+            "title": "Top 3 Finish",
+            "options": [
+              {
+                "optionId": "ROO-017-01",
+                "name": "Yes",
+                "odds": 2.0
+              },
+              {
+                "optionId": "ROO-017-02",
+                "name": "No",
+                "odds": 1.7
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "boxing": [
+      {
+        "eventId": "box1",
+        "eventName": "Heavyweight Championship: Tyson Fury vs Anthony Joshua",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "BOX-001",
+            "title": "Fight Winner",
+            "options": [
+              {
+                "optionId": "BOX-001-01",
+                "name": "Tyson Fury to Win",
+                "odds": 1.7
+              },
+              {
+                "optionId": "BOX-001-02",
+                "name": "Anthony Joshua to Win",
+                "odds": 2.0
+              },
+              {
+                "optionId": "BOX-001-03",
+                "name": "Draw",
+                "odds": 2.5
+              }
+            ]
+          },
+          {
+            "marketId": "BOX-002",
+            "title": "Total Rounds Over/Under",
+            "options": [
+              {
+                "optionId": "BOX-002-01",
+                "name": "Over 9.5 Rounds",
+                "odds": 1.8
+              },
+              {
+                "optionId": "BOX-002-02",
+                "name": "Under 9.5 Rounds",
+                "odds": 1.9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "box2",
+        "eventName": "Middleweight Bout: Canelo Alvarez vs Gennady Golovkin III",
+        "eventStatus": "close",
+        "markets": [
+          {
+            "marketId": "BOX-003",
+            "title": "Fight Winner",
+            "options": [
+              {
+                "optionId": "BOX-003-01",
+                "name": "Canelo Alvarez to Win",
+                "odds": 1.6
+              },
+              {
+                "optionId": "BOX-003-02",
+                "name": "Gennady Golovkin to Win",
+                "odds": 2.2
+              },
+              {
+                "optionId": "BOX-003-03",
+                "name": "Draw",
+                "odds": 2.7
+              }
+            ]
+          },
+          {
+            "marketId": "BOX-004",
+            "title": "Total Rounds Over/Under",
+            "options": [
+              {
+                "optionId": "BOX-004-01",
+                "name": "Over 10.5 Rounds",
+                "odds": 1.9
+              },
+              {
+                "optionId": "BOX-004-02",
+                "name": "Under 10.5 Rounds",
+                "odds": 1.7
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "box3",
+        "eventName": "Lightweight Title: Vasyl Lomachenko vs Teofimo Lopez II",
+        "eventStatus": "delayed",
+        "markets": [
+          {
+            "marketId": "BOX-005",
+            "title": "Fight Winner",
+            "options": [
+              {
+                "optionId": "BOX-005-01",
+                "name": "Vasyl Lomachenko to Win",
+                "odds": 1.8
+              },
+              {
+                "optionId": "BOX-005-02",
+                "name": "Teofimo Lopez to Win",
+                "odds": 2.1
+              },
+              {
+                "optionId": "BOX-005-03",
+                "name": "Draw",
+                "odds": 2.6
+              }
+            ]
+          },
+          {
+            "marketId": "BOX-006",
+            "title": "Total Rounds Over/Under",
+            "options": [
+              {
+                "optionId": "BOX-006-01",
+                "name": "Over 8.5 Rounds",
+                "odds": 1.7
+              },
+              {
+                "optionId": "BOX-006-02",
+                "name": "Under 8.5 Rounds",
+                "odds": 2.0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "americanFootball": [
+      {
+        "eventId": "af1",
+        "eventName": "Super Bowl",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "AFO-012",
+            "title": "Winner",
+            "options": [
+              {
+                "optionId": "AFO-012-01",
+                "name": "Team A to Win",
+                "odds": 2.5
+              },
+              {
+                "optionId": "AFO-012-02",
+                "name": "Team B to Win",
+                "odds": 2.8
+              }
+            ]
+          },
+          {
+            "marketId": "AFO-013",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "AFO-013-01",
+                "name": "Over 50.5",
+                "odds": 1.9
+              },
+              {
+                "optionId": "AFO-013-02",
+                "name": "Under 50.5",
+                "odds": 1.9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "af2",
+        "eventName": "NFL Conference Championship",
+        "eventStatus": "close",
+        "markets": [
+          {
+            "marketId": "AFO-014",
+            "title": "Winner",
+            "options": [
+              {
+                "optionId": "AFO-014-01",
+                "name": "Team X to Win",
+                "odds": 2.3
+              },
+              {
+                "optionId": "AFO-014-02",
+                "name": "Team Y to Win",
+                "odds": 2.6
+              }
+            ]
+          },
+          {
+            "marketId": "AFO-015",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "AFO-015-01",
+                "name": "Over 48.5",
+                "odds": 1.8
+              },
+              {
+                "optionId": "AFO-015-02",
+                "name": "Under 48.5",
+                "odds": 2.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "af3",
+        "eventName": "NFL Divisional Round",
+        "eventStatus": "delayed",
+        "markets": [
+          {
+            "marketId": "AFO-016",
+            "title": "Winner",
+            "options": [
+              {
+                "optionId": "AFO-016-01",
+                "name": "Team M to Win",
+                "odds": 2.7
+              },
+              {
+                "optionId": "AFO-016-02",
+                "name": "Team N to Win",
+                "odds": 2.4
+              }
+            ]
+          },
+          {
+            "marketId": "AFO-017",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "AFO-017-01",
+                "name": "Over 47.5",
+                "odds": 1.7
+              },
+              {
+                "optionId": "AFO-017-02",
+                "name": "Under 47.5",
+                "odds": 2.1
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
