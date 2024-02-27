@@ -36,8 +36,8 @@ const SingleBetComponent: React.FC<SingleBetProps> = ({
         style={{
           right: "20px",
           position: "absolute",
-          marginTop: "-30px",
-          marginRight: "0px",
+          marginTop: "-20px",
+          marginRight: "-6px",
         }}
         className="removeAllButton"
         onClick={() => handleRemoveSelection(selection.optionId)}
@@ -67,7 +67,7 @@ const SingleBetComponent: React.FC<SingleBetProps> = ({
           </button>
         </div>
         <span
-          style={{ margin: "10px 8px 8px 8px", marginTop: "10px" }}
+          style={{ margin: "15px 8px 8px 8px", marginTop: "10px" , fontWeight: "bolder"}}
         >{`+${selection.odds}`}</span>
       </div>
     </div>
