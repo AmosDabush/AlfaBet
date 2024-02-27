@@ -1,0 +1,910 @@
+{
+  "sports": {
+    "soccer": [
+      {
+        "eventId": "s4",
+        "eventName": "Manchester United vs Manchester City",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "FOO-012",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "FOO-012-01",
+                "name": "Manchester United to Win",
+                "odds": 2.8
+              },
+              {
+                "optionId": "FOO-012-02",
+                "name": "Manchester City to Win",
+                "odds": 1.9
+              },
+              {
+                "optionId": "FOO-012-03",
+                "name": "Draw",
+                "odds": 2.2
+              }
+            ]
+          },
+          {
+            "marketId": "FOO-013",
+            "title": "Both Teams to Score",
+            "options": [
+              {
+                "optionId": "FOO-013-01",
+                "name": "Yes",
+                "odds": 1.6
+              },
+              {
+                "optionId": "FOO-013-02",
+                "name": "No",
+                "odds": 2.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "s5",
+        "eventName": "Arsenal vs Tottenham",
+        "eventStatus": "close",
+        "markets": [
+          {
+            "marketId": "FOO-014",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "FOO-014-01",
+                "name": "Arsenal to Win",
+                "odds": 2.2
+              },
+              {
+                "optionId": "FOO-014-02",
+                "name": "Tottenham to Win",
+                "odds": 2.5
+              },
+              {
+                "optionId": "FOO-014-03",
+                "name": "Draw",
+                "odds": 2.0
+              }
+            ]
+          },
+          {
+            "marketId": "FOO-015",
+            "title": "Both Teams to Score",
+            "options": [
+              {
+                "optionId": "FOO-015-01",
+                "name": "Yes",
+                "odds": 1.7
+              },
+              {
+                "optionId": "FOO-015-02",
+                "name": "No",
+                "odds": 2.1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "s6",
+        "eventName": "Juventus vs AC Milan",
+        "eventStatus": "delayed",
+        "markets": [
+          {
+            "marketId": "FOO-016",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "FOO-016-01",
+                "name": "Juventus to Win",
+                "odds": 2.4
+              },
+              {
+                "optionId": "FOO-016-02",
+                "name": "AC Milan to Win",
+                "odds": 3.0
+              },
+              {
+                "optionId": "FOO-016-03",
+                "name": "Draw",
+                "odds": 2.1
+              }
+            ]
+          },
+          {
+            "marketId": "FOO-017",
+            "title": "Total Goals Over/Under",
+            "options": [
+              {
+                "optionId": "FOO-017-01",
+                "name": "Over 2.5",
+                "odds": 1.8
+              },
+              {
+                "optionId": "FOO-017-02",
+                "name": "Under 2.5",
+                "odds": 1.9
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "basketball": [
+      {
+        "eventId": "b1",
+        "eventName": "Bulls vs Knicks",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "BULLS-KNICKS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "BULLS-KNICKS-001-01",
+                "name": "Bulls to Win",
+                "odds": 2.2
+              },
+              {
+                "optionId": "BULLS-KNICKS-001-02",
+                "name": "Knicks to Win",
+                "odds": 1.7
+              }
+            ]
+          },
+          {
+            "marketId": "BULLS-KNICKS-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "BULLS-KNICKS-002-01",
+                "name": "Over 205.5",
+                "odds": 1.8
+              },
+              {
+                "optionId": "BULLS-KNICKS-002-02",
+                "name": "Under 205.5",
+                "odds": 1.9
+              }
+            ]
+          },
+          {
+            "marketId": "BULLS-KNICKS-003",
+            "title": "Player Props",
+            "options": [
+              {
+                "optionId": "BULLS-KNICKS-003-01",
+                "name": "LeBron James Over 25.5 Points",
+                "odds": 1.85
+              },
+              {
+                "optionId": "BULLS-KNICKS-003-02",
+                "name": "Julius Randle Over 20.5 Points",
+                "odds": 2.1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b2",
+        "eventName": "Warriors vs Rockets",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "WARRIORS-ROCKETS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "WARRIORS-ROCKETS-001-01",
+                "name": "Warriors to Win",
+                "odds": 1.6
+              },
+              {
+                "optionId": "WARRIORS-ROCKETS-001-02",
+                "name": "Rockets to Win",
+                "odds": 2.5
+              }
+            ]
+          },
+          {
+            "marketId": "WARRIORS-ROCKETS-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "WARRIORS-ROCKETS-002-01",
+                "name": "Over 215.5",
+                "odds": 2.0
+              },
+              {
+                "optionId": "WARRIORS-ROCKETS-002-02",
+                "name": "Under 215.5",
+                "odds": 1.9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b3",
+        "eventName": "Clippers vs Lakers",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "CLIPPERS-LAKERS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "CLIPPERS-LAKERS-001-01",
+                "name": "Clippers to Win",
+                "odds": 1.8
+              },
+              {
+                "optionId": "CLIPPERS-LAKERS-001-02",
+                "name": "Lakers to Win",
+                "odds": 2.0
+              }
+            ]
+          },
+          {
+            "marketId": "CLIPPERS-LAKERS-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "CLIPPERS-LAKERS-002-01",
+                "name": "Over 220.5",
+                "odds": 1.9
+              },
+              {
+                "optionId": "CLIPPERS-LAKERS-002-02",
+                "name": "Under 220.5",
+                "odds": 2.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b4",
+        "eventName": "Celtics vs Heat",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "CELTICS-HEAT-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "CELTICS-HEAT-001-01",
+                "name": "Celtics to Win",
+                "odds": 1.7
+              },
+              {
+                "optionId": "CELTICS-HEAT-001-02",
+                "name": "Heat to Win",
+                "odds": 2.2
+              }
+            ]
+          },
+          {
+            "marketId": "CELTICS-HEAT-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "CELTICS-HEAT-002-01",
+                "name": "Over 210.5",
+                "odds": 1.8
+              },
+              {
+                "optionId": "CELTICS-HEAT-002-02",
+                "name": "Under 210.5",
+                "odds": 1.9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b5",
+        "eventName": "Raptors vs Bucks",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "RAPTORS-BUCKS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "RAPTORS-BUCKS-001-01",
+                "name": "Raptors to Win",
+                "odds": 2.1
+              },
+              {
+                "optionId": "RAPTORS-BUCKS-001-02",
+                "name": "Bucks to Win",
+                "odds": 1.8
+              }
+            ]
+          },
+          {
+            "marketId": "RAPTORS-BUCKS-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "RAPTORS-BUCKS-002-01",
+                "name": "Over 215.5",
+                "odds": 1.9
+              },
+              {
+                "optionId": "RAPTORS-BUCKS-002-02",
+                "name": "Under 215.5",
+                "odds": 2.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b6",
+        "eventName": "Spurs vs Mavericks",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "SPURS-MAVERICKS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "SPURS-MAVERICKS-001-01",
+                "name": "Spurs to Win",
+                "odds": 2.0
+              },
+              {
+                "optionId": "SPURS-MAVERICKS-001-02",
+                "name": "Mavericks to Win",
+                "odds": 1.9
+              }
+            ]
+          },
+          {
+            "marketId": "SPURS-MAVERICKS-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "SPURS-MAVERICKS-002-01",
+                "name": "Over 210.5",
+                "odds": 1.8
+              },
+              {
+                "optionId": "SPURS-MAVERICKS-002-02",
+                "name": "Under 210.5",
+                "odds": 1.9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b7",
+        "eventName": "Nets vs 76ers",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "NETS-76ERS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "NETS-76ERS-001-01",
+                "name": "Nets to Win",
+                "odds": 1.9
+              },
+              {
+                "optionId": "NETS-76ERS-001-02",
+                "name": "76ers to Win",
+                "odds": 2.0
+              }
+            ]
+          },
+          {
+            "marketId": "NETS-76ERS-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "NETS-76ERS-002-01",
+                "name": "Over 215.5",
+                "odds": 1.9
+              },
+              {
+                "optionId": "NETS-76ERS-002-02",
+                "name": "Under 215.5",
+                "odds": 2.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b8",
+        "eventName": "Trail Blazers vs Jazz",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "TRAILBLAZERS-JAZZ-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "TRAILBLAZERS-JAZZ-001-01",
+                "name": "Trail Blazers to Win",
+                "odds": 2.1
+              },
+              {
+                "optionId": "TRAILBLAZERS-JAZZ-001-02",
+                "name": "Jazz to Win",
+                "odds": 1.8
+              }
+            ]
+          },
+          {
+            "marketId": "TRAILBLAZERS-JAZZ-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "TRAILBLAZERS-JAZZ-002-01",
+                "name": "Over 220.5",
+                "odds": 1.9
+              },
+              {
+                "optionId": "TRAILBLAZERS-JAZZ-002-02",
+                "name": "Under 220.5",
+                "odds": 2.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b9",
+        "eventName": "Pelicans vs Lakers",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "PELICANS-LAKERS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "PELICANS-LAKERS-001-01",
+                "name": "Pelicans to Win",
+                "odds": 2.0
+              },
+              {
+                "optionId": "PELICANS-LAKERS-001-02",
+                "name": "Lakers to Win",
+                "odds": 1.9
+              }
+            ]
+          },
+          {
+            "marketId": "PELICANS-LAKERS-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "PELICANS-LAKERS-002-01",
+                "name": "Over 215.5",
+                "odds": 1.8
+              },
+              {
+                "optionId": "PELICANS-LAKERS-002-02",
+                "name": "Under 215.5",
+                "odds": 1.9
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "b10",
+        "eventName": "Thunder vs Suns",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "THUNDER-SUNS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "THUNDER-SUNS-001-01",
+                "name": "Thunder to Win",
+                "odds": 2.2
+              },
+              {
+                "optionId": "THUNDER-SUNS-001-02",
+                "name": "Suns to Win",
+                "odds": 1.7
+              }
+            ]
+          },
+          {
+            "marketId": "THUNDER-SUNS-002",
+            "title": "Total Points Over/Under",
+            "options": [
+              {
+                "optionId": "THUNDER-SUNS-002-01",
+                "name": "Over 210.5",
+                "odds": 1.9
+              },
+              {
+                "optionId": "THUNDER-SUNS-002-02",
+                "name": "Under 210.5",
+                "odds": 2.0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tennis": [
+      {
+        "eventId": "t1",
+        "eventName": "Djokovic vs Nadal",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "DJOKOVIC-NADAL-001",
+            "title": "Match Winner",
+            "options": [
+              {
+                "optionId": "DJOKOVIC-NADAL-001-01",
+                "name": "Djokovic to Win",
+                "odds": 1.8
+              },
+              {
+                "optionId": "DJOKOVIC-NADAL-001-02",
+                "name": "Nadal to Win",
+                "odds": 2.0
+              }
+            ]
+          },
+          {
+            "marketId": "DJOKOVIC-NADAL-002",
+            "title": "Total Sets Over/Under",
+            "options": [
+              {
+                "optionId": "DJOKOVIC-NADAL-002-01",
+                "name": "Over 3.5 Sets",
+                "odds": 1.9
+              },
+              {
+                "optionId": "DJOKOVIC-NADAL-002-02",
+                "name": "Under 3.5 Sets",
+                "odds": 1.8
+              }
+            ]
+          },
+          {
+            "marketId": "DJOKOVIC-NADAL-003",
+            "title": "Player to Win First Set",
+            "options": [
+              {
+                "optionId": "DJOKOVIC-NADAL-003-01",
+                "name": "Djokovic",
+                "odds": 1.85
+              },
+              {
+                "optionId": "DJOKOVIC-NADAL-003-02",
+                "name": "Nadal",
+                "odds": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "t2",
+        "eventName": "Federer vs Murray",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "FEDERER-MURRAY-001",
+            "title": "Match Winner",
+            "options": [
+              {
+                "optionId": "FEDERER-MURRAY-001-01",
+                "name": "Federer to Win",
+                "odds": 1.7
+              },
+              {
+                "optionId": "FEDERER-MURRAY-001-02",
+                "name": "Murray to Win",
+                "odds": 2.1
+              }
+            ]
+          },
+          {
+            "marketId": "FEDERER-MURRAY-002",
+            "title": "Total Games Over/Under",
+            "options": [
+              {
+                "optionId": "FEDERER-MURRAY-002-01",
+                "name": "Over 22.5 Games",
+                "odds": 1.85
+              },
+              {
+                "optionId": "FEDERER-MURRAY-002-02",
+                "name": "Under 22.5 Games",
+                "odds": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "t3",
+        "eventName": "Williams vs Osaka",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "WILLIAMS-OSAKA-001",
+            "title": "Match Winner",
+            "options": [
+              {
+                "optionId": "WILLIAMS-OSAKA-001-01",
+                "name": "Williams to Win",
+                "odds": 2.0
+              },
+              {
+                "optionId": "WILLIAMS-OSAKA-001-02",
+                "name": "Osaka to Win",
+                "odds": 1.8
+              }
+            ]
+          },
+          {
+            "marketId": "WILLIAMS-OSAKA-002",
+            "title": "Total Sets Over/Under",
+            "options": [
+              {
+                "optionId": "WILLIAMS-OSAKA-002-01",
+                "name": "Over 2.5 Sets",
+                "odds": 2.1
+              },
+              {
+                "optionId": "WILLIAMS-OSAKA-002-02",
+                "name": "Under 2.5 Sets",
+                "odds": 1.7
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "hockey": [
+      {
+        "eventId": "h1",
+        "eventName": "Blackhawks vs Rangers",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "BLACKHAWKS-RANGERS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "BLACKHAWKS-RANGERS-001-01",
+                "name": "Blackhawks to Win",
+                "odds": 2.3
+              },
+              {
+                "optionId": "BLACKHAWKS-RANGERS-001-02",
+                "name": "Rangers to Win",
+                "odds": 1.6
+              }
+            ]
+          },
+          {
+            "marketId": "BLACKHAWKS-RANGERS-002",
+            "title": "Total Goals Over/Under",
+            "options": [
+              {
+                "optionId": "BLACKHAWKS-RANGERS-002-01",
+                "name": "Over 5.5",
+                "odds": 1.85
+              },
+              {
+                "optionId": "BLACKHAWKS-RANGERS-002-02",
+                "name": "Under 5.5",
+                "odds": 2.0
+              }
+            ]
+          },
+          {
+            "marketId": "BLACKHAWKS-RANGERS-003",
+            "title": "Player Goal Props",
+            "options": [
+              {
+                "optionId": "BLACKHAWKS-RANGERS-003-01",
+                "name": "Patrick Kane Over 0.5 Goals",
+                "odds": 2.1
+              },
+              {
+                "optionId": "BLACKHAWKS-RANGERS-003-02",
+                "name": "Artemi Panarin Over 0.5 Goals",
+                "odds": 1.95
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "h2",
+        "eventName": "Red Wings vs Stars",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "REDWINGS-STARS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "REDWINGS-STARS-001-01",
+                "name": "Red Wings to Win",
+                "odds": 1.9
+              },
+              {
+                "optionId": "REDWINGS-STARS-001-02",
+                "name": "Stars to Win",
+                "odds": 2.0
+              }
+            ]
+          },
+          {
+            "marketId": "REDWINGS-STARS-002",
+            "title": "Total Goals Over/Under",
+            "options": [
+              {
+                "optionId": "REDWINGS-STARS-002-01",
+                "name": "Over 6.5",
+                "odds": 1.8
+              },
+              {
+                "optionId": "REDWINGS-STARS-002-02",
+                "name": "Under 6.5",
+                "odds": 2.05
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "eventId": "h3",
+        "eventName": "Bruins vs Flyers",
+        "eventStatus": "open",
+        "markets": [
+          {
+            "marketId": "BRUINS-FLYERS-001",
+            "title": "Full Time Result",
+            "options": [
+              {
+                "optionId": "BRUINS-FLYERS-001-01",
+                "name": "Bruins to Win",
+                "odds": 1.75
+              },
+              {
+                "optionId": "BRUINS-FLYERS-001-02",
+                "name": "Flyers to Win",
+                "odds": 2.25
+              }
+            ]
+          },
+          {
+            "marketId": "BRUINS-FLYERS-002",
+            "title": "Total Goals Over/Under",
+            "options": [
+              {
+                "optionId": "BRUINS-FLYERS-002-01",
+                "name": "Over 5.5",
+                "odds": 1.9
+              },
+              {
+                "optionId": "BRUINS-FLYERS-002-02",
+                "name": "Under 5.5",
+                "odds": 1.9
+              }
+            ]
+          }
+        ]
+      }],"baseball": [
+        {
+          "eventId": "ba1",
+          "eventName": "Cubs vs Cardinals",
+          "eventStatus": "open",
+          "markets": [
+            {
+              "marketId": "CUBS-CARDINALS-001",
+              "title": "Full Time Result",
+              "options": [
+                {
+                  "optionId": "CUBS-CARDINALS-001-01",
+                  "name": "Cubs to Win",
+                  "odds": 2.0
+                },
+                {
+                  "optionId": "CUBS-CARDINALS-001-02",
+                  "name": "Cardinals to Win",
+                  "odds": 1.8
+                }
+              ]
+            },
+            {
+              "marketId": "CUBS-CARDINALS-002",
+              "title": "Total Runs Over/Under",
+              "options": [
+                {
+                  "optionId": "CUBS-CARDINALS-002-01",
+                  "name": "Over 8.5",
+                  "odds": 1.9
+                },
+                {
+                  "optionId": "CUBS-CARDINALS-002-02",
+                  "name": "Under 8.5",
+                  "odds": 1.9
+                }
+              ]
+            },
+            {
+              "marketId": "CUBS-CARDINALS-003",
+              "title": "Player Props",
+              "options": [
+                {
+                  "optionId": "CUBS-CARDINALS-003-01",
+                  "name": "Anthony Rizzo Over 1.5 Hits",
+                  "odds": 2.0
+                },
+                {
+                  "optionId": "CUBS-CARDINALS-003-02",
+                  "name": "Nolan Arenado Over 0.5 Home Runs",
+                  "odds": 3.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "ba2",
+          "eventName": "Yankees vs Red Sox",
+          "eventStatus": "open",
+          "markets": [
+            {
+              "marketId": "YANKEES-REDSOX-001",
+              "title": "Full Time Result",
+              "options": [
+                {
+                  "optionId": "YANKEES-REDSOX-001-01",
+                  "name": "Yankees to Win",
+                  "odds": 1.7
+                },
+                {
+                  "optionId": "YANKEES-REDSOX-001-02",
+                  "name": "Red Sox to Win",
+                  "odds": 2.1
+                }
+              ]
+            },
+            {
+              "marketId": "YANKEES-REDSOX-002",
+              "title": "Total Runs Over/Under",
+              "options": [
+                {
+                  "optionId": "YANKEES-REDSOX-002-01",
+                  "name": "Over 9.5",
+                  "odds": 1.8
+                },
+                {
+                  "optionId": "YANKEES-REDSOX-002-02",
+                  "name": "Under 9.5",
+                  "odds": 2.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+  }
+}

@@ -1,0 +1,7 @@
+.mainPage {
+    width: 430px;
+    height: 1156px;
+    overflow-y: auto; 
+    border: 1px solid #ccc;
+    background-color: white;
+  }

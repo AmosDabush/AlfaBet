@@ -1,0 +1,58 @@
+.eventSelectionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 10px 0 10px 0;
+  }
+  
+  .eventHeader {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .eventButtonContainer {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .eventButtonContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .eventButton {
+    background-color: #939393;
+    color: #333;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    max-width: 200px;
+    width: max-content;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  
+  .eventButton.selectedEvent {
+    color: #ff0000;
+  }
+  
+  .arrowBtn{
+    font-size: 1.5rem;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .arrowBtn.left {
+    position: absolute;
+    left: 10px;
+  }
+  
+  .arrowBtn.right {
+    position: absolute;
+    right: 10px;
+  }
+  

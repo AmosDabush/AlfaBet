@@ -1,0 +1,150 @@
+
+.multiBetOptions {
+    margin-bottom: 20px;
+}
+
+.smallerText {
+    font-size: 0.8em;
+}
+
+.multiBetHeader {
+    background-color: #ff3a3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 2px;
+    margin: 10px -1.5rem 0 -1.5rem;
+}
+
+.ctaButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.selectionCount {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.betList {
+    background-color: #ffffff;
+    border-radius: 5px;
+    /* margin: 10px 0; */
+    /* padding: 10px; */
+}
+
+.betItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    font-size: 0.8em;
+}
+
+.betDetails {
+    flex-grow: 1;
+}
+
+.betMatch {
+    font-weight: bold;
+    color: #333333;
+}
+
+.betType {
+    color: #666666;
+}
+
+.timeline {
+    font-size: 12px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 8px 0;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 10px;
+    bottom: -10px;
+    width: 2px;
+    height: 95%;
+    background: #d1d1d1;
+}
+
+.timeline-icon {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid red;
+}
+
+.timeline-icon-wrapper {
+    position: absolute;
+    left: -30px;
+    top: 10px;
+    height: 23px;
+    width: 25px;
+    background: rgb(255, 255, 255);
+    z-index: 10;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-btn {
+    border-radius: 100%;
+    background-color: #676767;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.form-control {
+    color: black;
+    background-color: #ffffff;
+    border: solid 2px #676767;
+    text-align: center;
+    padding: 5px 10px;
+    width: 40px;
+    margin: 2px;
+}
+
+.dollarSymbol {
+    margin-left: 2px;
+    font-size: 14px;
+}
+
+.removeAllButton{
+    position: absolute;
+    margin-left: 10px;
+    padding: 10px 10px;
+    background-color: #676767;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.singleTitle{
+    padding: 5px;
+}
