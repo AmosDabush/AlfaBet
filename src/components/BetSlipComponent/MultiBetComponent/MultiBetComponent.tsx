@@ -1,7 +1,7 @@
 import React from "react";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { BetSelection } from "../../types/contextTypes";
+import { BetSelection } from "../../../types/contextTypes";
 
 interface MultiSelectionItem {
   eventId: string;
@@ -12,10 +12,11 @@ interface MultiBetProps {
   eventSelections: BetSelection[];
   index: number;
   handleRemoveSelection: (optionId: string) => void;
-  handleDecrease: (eventId: string, index: number) => void;
-  handleIncrease: (eventId: string, index: number) => void;
+  handleDecrease: () => void;
+  handleIncrease: () => void;
   handleMultiStakeChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   multiSelection: { [key: string]: MultiSelectionItem[] };
+  stake: number;
 }
 
 const MultiBetComponent: React.FC<MultiBetProps> = ({
@@ -26,6 +27,7 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
   handleIncrease,
   handleMultiStakeChange,
   multiSelection,
+  stake,
 }) => {
   if (eventSelections.length <= 1) {
     return null;
@@ -34,17 +36,24 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
   // Calculate total odds
   const totalOdds = eventSelections.reduce(
     (total, selection) => total * selection.odds,
-    1
+    1,
   );
 
-  const multiSelectionItem = multiSelection[eventSelections[0].optionId]?.[index];
+  const multiSelectionItem =
+    multiSelection[eventSelections[0].optionId]?.[index];
 
   return (
-    <div className="multiBetContainer" style={{ justifyContent: "space-between" }}>
+    <div
+      className="multiBetContainer"
+      style={{ justifyContent: "space-between" }}
+    >
       <div className="multiBetHeader smallerText">
         <button className="ctaButton">CREATE YOUR BET</button>
       </div>
-      <div style={{ float: "left", marginRight: "45px" }} className="selectionCount">
+      <div
+        style={{ float: "left", marginRight: "45px" }}
+        className="selectionCount"
+      >
         [CYB] &nbsp; {eventSelections.length} SELECTIONS
       </div>
       <div> Odds: {totalOdds.toFixed(2)}</div>
@@ -67,30 +76,24 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
         className="removeAllButton"
         onClick={() =>
           eventSelections.forEach((selection) =>
-            handleRemoveSelection(selection.optionId)
+            handleRemoveSelection(selection.optionId),
           )
         }
       >
         <DeleteIcon />
       </IconButton>
       <div className="input-group">
-        <button
-          className="input-group-btn"
-          onClick={() => handleDecrease(eventSelections[0].optionId, index)}
-        >
+        <button className="input-group-btn" onClick={handleDecrease}>
           -
         </button>
         <span className="dollarSymbol">$</span>
         <input
           type="text"
           className="form-control"
-          value={multiSelectionItem?.stake ?? ""}
+          value={stake}
           onChange={(e) => handleMultiStakeChange(e)}
         />
-        <button
-          className="input-group-btn"
-          onClick={() => handleIncrease(eventSelections[0].optionId, index)}
-        >
+        <button className="input-group-btn" onClick={handleIncrease}>
           +
         </button>
       </div>

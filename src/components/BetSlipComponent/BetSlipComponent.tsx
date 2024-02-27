@@ -10,8 +10,8 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import FooterComponent from "../FooterComponent/FooterComponent";
 import "./BetSlipComponent.css";
-import SingleBetComponent from "./SingleBets";
-import MultiBetComponent from "./MultiBetComponent";
+import SingleBetComponent from "./SingleBetComponent/SingleBetsComponent";
+import MultiBetComponent from "./MultiBetComponent/MultiBetComponent";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement },
@@ -37,7 +37,7 @@ const BetSlipComponent = ({
     multiSelection,
     updateMultiSelection,
   } = useBetSlip();
-
+  const [multiStake, setMultiStake] = React.useState(0);
   const handleRemoveSelection = (optionId: string) => {
     removeSelection(optionId);
   };
@@ -109,26 +109,12 @@ const BetSlipComponent = ({
     onClose();
   };
 
-  const handleIncrease = (eventId: string, index: number) => {
-    // Ensure currentStake is treated as a number, even if it's a string
-    const currentStake = Number(multiSelection[eventId][index]?.stake) || 0;
-    const increment = 1;
-    const newStake = currentStake + increment;
-    // Update the stake in your state here, convert newStake back to string if necessary
-    handleMultiStakeChange({
-      target: { value: newStake.toString() },
-    } as React.ChangeEvent<HTMLInputElement>);
+  const handleIncrease = () => {
+    setMultiStake((prevStake) => prevStake + 1);
   };
 
-  const handleDecrease = (eventId: string, index: number) => {
-    const currentStake = Number(multiSelection[eventId][index]?.stake) || 0;
-    const decrement = 1;
-    const newStake =
-      currentStake - decrement >= 0 ? currentStake - decrement : 0;
-    // Update the stake in your state here, convert newStake back to string if necessary
-    handleMultiStakeChange({
-      target: { value: newStake.toString() },
-    } as React.ChangeEvent<HTMLInputElement>);
+  const handleDecrease = () => {
+    setMultiStake((prevStake) => prevStake - 1);
   };
 
   const selectionsByEvent: { [eventId: string]: BetSelection[] } = {};
@@ -160,93 +146,6 @@ const BetSlipComponent = ({
         <FooterComponent onOpen={handleToggle} open={true} />
         <DialogTitle id="bet-slip-dialog-title">Bet Slip</DialogTitle>
         <DialogContent>
-          {/* {Object.values(selectionsByEvent).map((eventSelections, index) => {
-            if (eventSelections.length > 1) {
-              // Calculate total odds
-              const totalOdds = eventSelections.reduce(
-                (total, selection) => total * selection.odds,
-                1,
-              );
-
-              return (
-                <div
-                  key={index}
-                  className="multiBetContainer"
-                  style={{ justifyContent: "space-between" }}
-                >
-                  <div className="multiBetHeader smallerText">
-                    <button className="ctaButton">CREATE YOUR BET</button>
-                  </div>
-                  <div
-                    style={{ float: "left", marginRight: "45px" }}
-                    className="selectionCount"
-                  >
-                    [CYB] &nbsp;
-                    {eventSelections.length} SELECTIONS
-                  </div>
-                  <div> Odds: {totalOdds.toFixed(2)}</div>
-                  <ul className="timeline">
-                    {eventSelections.map((selection, sIndex) => (
-                      <li key={sIndex} className="timeline-item">
-                        <div className="timeline-icon-wrapper">
-                          <div className="timeline-icon"></div>
-                        </div>
-                        <div className="timeline-content">
-                          <div className="betDetails">
-                            <div className="betMatch">{selection.name}</div>
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>{" "}
-                  <IconButton
-                    style={{
-                      float: "right",
-                      marginTop: "-25px",
-                      marginRight: "10px",
-                    }}
-                    className="removeAllButton"
-                    onClick={() =>
-                      eventSelections.forEach((selection) =>
-                        handleRemoveSelection(selection.optionId),
-                      )
-                    }
-                  >
-                    <DeleteIcon />
-                  </IconButton>
-                  <div className="input-group">
-                    <button
-                      className="input-group-btn"
-                      onClick={() =>
-                        handleDecrease(eventSelections[0].eventId, index)
-                      }
-                    >
-                      -
-                    </button>
-                    <span className="dollarSymbol">$</span>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={
-                        multiSelection[eventSelections[0].eventId][index]?.stake
-                      }
-                      onChange={(e) => handleMultiStakeChange(e)}
-                    />
-                    <button
-                      className="input-group-btn"
-                      onClick={() =>
-                        handleIncrease(eventSelections[0].eventId, index)
-                      }
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })} */}
           {Object.values(selectionsByEvent).map((eventSelections, index) => (
             <MultiBetComponent
               key={index}
@@ -257,6 +156,7 @@ const BetSlipComponent = ({
               handleIncrease={handleIncrease}
               handleMultiStakeChange={handleMultiStakeChange}
               multiSelection={multiSelection}
+              stake={multiStake}
             />
           ))}
           <div className="multiBetHeader smallerText">
