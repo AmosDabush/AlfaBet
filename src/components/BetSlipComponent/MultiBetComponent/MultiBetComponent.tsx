@@ -2,31 +2,23 @@ import React from "react";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { BetSelection } from "../../../types/contextTypes";
-
-interface MultiSelectionItem {
-  eventId: string;
-  stake: string;
-}
+import "./MultiBetComponent.css";
 
 interface MultiBetProps {
   eventSelections: BetSelection[];
-  index: number;
   handleRemoveSelection: (optionId: string) => void;
   handleDecrease: () => void;
   handleIncrease: () => void;
   handleMultiStakeChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  multiSelection: { [key: string]: MultiSelectionItem[] };
   stake: number;
 }
 
 const MultiBetComponent: React.FC<MultiBetProps> = ({
   eventSelections,
-  index,
   handleRemoveSelection,
   handleDecrease,
   handleIncrease,
   handleMultiStakeChange,
-  multiSelection,
   stake,
 }) => {
   if (eventSelections.length <= 1) {
@@ -39,9 +31,6 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
     1,
   );
 
-  const multiSelectionItem =
-    multiSelection[eventSelections[0].optionId]?.[index];
-
   return (
     <div
       className="multiBetContainer"
@@ -50,13 +39,11 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
       <div className="multiBetHeader smallerText">
         <button className="ctaButton">CREATE YOUR BET</button>
       </div>
-      <div
-        style={{ float: "left", marginRight: "45px" }}
-        className="selectionCount"
-      >
-        [CYB] &nbsp; {eventSelections.length} SELECTIONS
-      </div>
-      <div> Odds: {totalOdds.toFixed(2)}</div>
+      <span className="selectionCount">
+        <div className="cta-button">CYB</div> &nbsp; {eventSelections.length}{" "}
+        SELECTIONS
+        <span className="totalOdds"> Odds: {totalOdds.toFixed(2)}</span>
+      </span>
       <ul className="timeline">
         {eventSelections.map((selection, sIndex) => (
           <li key={sIndex} className="timeline-item">

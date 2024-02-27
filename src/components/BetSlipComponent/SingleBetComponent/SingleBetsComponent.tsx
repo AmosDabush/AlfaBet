@@ -1,9 +1,8 @@
 import React from "react";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-
+import "./SingleBetsComponent.css";
 interface BetSelection {
-  // Define the properties of BetSelection interface
   optionId: string;
   name: string;
   odds: number;
@@ -31,7 +30,7 @@ const SingleBetComponent: React.FC<SingleBetProps> = ({
   handleStakeChange,
 }) => {
   return (
-    <div key={index}>
+    <div className="singleBet" key={index}>
       <div className="singleTitle">{selection.name}</div>
       <IconButton
         style={{
@@ -57,7 +56,7 @@ const SingleBetComponent: React.FC<SingleBetProps> = ({
           <input
             type="text"
             className="form-control"
-            value={selection.stake}
+            value={selection.stake ?? ""}
             onChange={(e) => handleStakeChange(e, selection.optionId)}
           />
           <button

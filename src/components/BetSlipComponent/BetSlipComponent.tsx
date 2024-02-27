@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useBetSlip } from "../../contexts/BetSlipContext";
 import { BetSelection } from "../../types/contextTypes";
 import Dialog from "@mui/material/Dialog";
@@ -9,9 +9,11 @@ import Button from "@mui/material/Button";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import FooterComponent from "../FooterComponent/FooterComponent";
-import "./BetSlipComponent.css";
 import SingleBetComponent from "./SingleBetComponent/SingleBetsComponent";
 import MultiBetComponent from "./MultiBetComponent/MultiBetComponent";
+import "./BetSlipComponent.css";
+import ReceiptDialog from "./ReceiptDialog/ReceiptDialog";
+import { calculateTotalOdds } from "../../helpers/helpers";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement },
@@ -34,10 +36,17 @@ const BetSlipComponent = ({
     removeSelection,
     setTotalStake,
     updateSelection,
-    multiSelection,
     updateMultiSelection,
+    totalStake,
   } = useBetSlip();
-  const [multiStake, setMultiStake] = React.useState(0);
+  const [multiStake, setMultiStake] = useState(0);
+  const [receiptOpen, setReceiptOpen] = useState(false); // State for controlling the receipt dialog
+  const [receiptData, setReceiptData] = useState<
+    | {
+        [key: string]: string | number | { [key: string]: string | number };
+      }
+    | any
+  >(null); // State for storing receipt data
   const handleRemoveSelection = (optionId: string) => {
     removeSelection(optionId);
   };
@@ -106,9 +115,18 @@ const BetSlipComponent = ({
   };
 
   const handleSubmitBet = () => {
+    console.log("Submitting bet...");
+    const totalOdds = calculateTotalOdds(selections);
+    const receiptData = {
+      ...selections.map((s) => ({ [s.name]: s.stake })),
+      stake: totalStake + multiStake,
+      odds: totalOdds,
+    };
+    setReceiptData(receiptData);
+    setReceiptOpen(true);
+
     onClose();
   };
-
   const handleIncrease = () => {
     setMultiStake((prevStake) => prevStake + 1);
   };
@@ -150,12 +168,10 @@ const BetSlipComponent = ({
             <MultiBetComponent
               key={index}
               eventSelections={eventSelections}
-              index={index}
               handleRemoveSelection={handleRemoveSelection}
               handleDecrease={handleDecrease}
               handleIncrease={handleIncrease}
               handleMultiStakeChange={handleMultiStakeChange}
-              multiSelection={multiSelection}
               stake={multiStake}
             />
           ))}
@@ -164,6 +180,7 @@ const BetSlipComponent = ({
           </div>
           {selections.map((selection: BetSelection, index: number) => (
             <SingleBetComponent
+              key={index}
               selection={selection}
               index={index}
               handleRemoveSelection={handleRemoveSelection}
@@ -179,6 +196,11 @@ const BetSlipComponent = ({
           </Button>
         </DialogActions>
       </Dialog>
+      <ReceiptDialog
+        open={receiptOpen}
+        onClose={() => setReceiptOpen(false)}
+        receiptData={receiptData}
+      />
     </>
   );
 };

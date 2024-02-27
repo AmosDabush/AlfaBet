@@ -22,10 +22,10 @@
   }
   
   .eventButton {
-    background-color: #939393;
+    background-color: #ffffff;
     color: #333;
     padding: 8px 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc00;
     border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;

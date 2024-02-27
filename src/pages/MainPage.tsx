@@ -7,6 +7,7 @@ import EventSelectionBar from "../components/EventSelectionBar/EventSelectionBar
 import EventsDisplay from "../components/EventsDisplay/EventsDisplay"; // Adjust the path
 import { BetSelection } from "../types/contextTypes";
 import "./MainPage.css";
+import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
 const MainPage = () => {
   const [betSlipOpen, setBetSlipOpen] = useState(false);
   const { eventsData, addSelection, selections } = useBetSlip();
@@ -33,6 +34,10 @@ const MainPage = () => {
   return (
     <>
       <div className="mainPage">
+        <HeaderComponent
+          toggleBetSlip={toggleBetSlip}
+          isSlipOpen={betSlipOpen}
+        />
         <SportSelectionBar
           selectedSport={selectedSport}
           eventsData={eventsData}

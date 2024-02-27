@@ -1,8 +1,8 @@
 export type MarketOption = {
-  eventId: number;
   optionId: string;
   name: string;
   odds: number;
+  eventId?: number;
 };
 
 export type Market = {
