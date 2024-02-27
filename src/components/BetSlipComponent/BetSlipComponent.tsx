@@ -6,13 +6,12 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import FooterComponent from "../FooterComponent/FooterComponent";
 import "./BetSlipComponent.css";
-import { IconButton } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import SingleBetComponent from "./SingleBets";
+import MultiBetComponent from "./MultiBetComponent";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement },
@@ -161,7 +160,7 @@ const BetSlipComponent = ({
         <FooterComponent onOpen={handleToggle} open={true} />
         <DialogTitle id="bet-slip-dialog-title">Bet Slip</DialogTitle>
         <DialogContent>
-          {Object.values(selectionsByEvent).map((eventSelections, index) => {
+          {/* {Object.values(selectionsByEvent).map((eventSelections, index) => {
             if (eventSelections.length > 1) {
               // Calculate total odds
               const totalOdds = eventSelections.reduce(
@@ -247,54 +246,31 @@ const BetSlipComponent = ({
             } else {
               return null;
             }
-          })}
-
+          })} */}
+          {Object.values(selectionsByEvent).map((eventSelections, index) => (
+            <MultiBetComponent
+              key={index}
+              eventSelections={eventSelections}
+              index={index}
+              handleRemoveSelection={handleRemoveSelection}
+              handleDecrease={handleDecrease}
+              handleIncrease={handleIncrease}
+              handleMultiStakeChange={handleMultiStakeChange}
+              multiSelection={multiSelection}
+            />
+          ))}
           <div className="multiBetHeader smallerText">
             <button className="ctaButton">singles</button>
           </div>
           {selections.map((selection: BetSelection, index: number) => (
-            <div key={index}>
-              <div className="singleTitle">{selection.name}</div>
-
-              <IconButton
-                style={{
-                  right: "20px",
-                  position: "absolute",
-                  marginTop: "-30px",
-                  marginRight: "0px",
-                }}
-                className="removeAllButton"
-                onClick={() => handleRemoveSelection(selection.optionId)}
-              >
-                <DeleteIcon />
-              </IconButton>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <div className="input-group">
-                  <button
-                    className="input-group-btn"
-                    onClick={() => handleDecreaseS(selections[index].optionId)}
-                  >
-                    -
-                  </button>
-                  <span className="dollarSymbol">$</span>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={selections[index].stake}
-                    onChange={(e) => handleMultiStakeChange(e)}
-                  />
-                  <button
-                    className="input-group-btn"
-                    onClick={() => handleIncreaseS(selections[index].optionId)}
-                  >
-                    +
-                  </button>
-                </div>
-                <span
-                  style={{ margin: "10px 8px 8px 8px", marginTop: "10px" }}
-                >{`+${selection.odds}`}</span>
-              </div>
-            </div>
+            <SingleBetComponent
+              selection={selection}
+              index={index}
+              handleRemoveSelection={handleRemoveSelection}
+              handleDecreaseS={handleDecreaseS}
+              handleIncreaseS={handleIncreaseS}
+              handleStakeChange={handleStakeChange}
+            />
           ))}
         </DialogContent>
         <DialogActions>
