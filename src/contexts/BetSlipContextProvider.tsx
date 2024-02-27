@@ -68,7 +68,7 @@ export const BetSlipProvider: React.FC<{ children: ReactNode }> = ({
 
       const existingMultiSelections = prevState.multiSelection[eventId] || [];
 
-      if (existingMultiSelections.length >= 2) {
+      if (existingMultiSelections.length > 0) {
         return { ...prevState, selections: updatedSelections };
       }
 

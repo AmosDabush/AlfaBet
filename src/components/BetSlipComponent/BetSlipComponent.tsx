@@ -41,6 +41,8 @@ const BetSlipComponent = ({
   } = useBetSlip();
   const [multiStake, setMultiStake] = useState(0);
   const [receiptOpen, setReceiptOpen] = useState(false);
+  const [error, setError] = useState("false");
+
   const [receiptData, setReceiptData] = useState<
     | {
         [key: string]: string | number | { [key: string]: string | number };
@@ -133,7 +135,7 @@ const BetSlipComponent = ({
   };
 
   const handleDecrease = () => {
-    setMultiStake((prevStake) => prevStake - 1);
+    setMultiStake((prevStake) => (prevStake - 1 >= 0 ? prevStake - 1 : 0));
   };
 
   const selectionsByEvent: { [eventId: string]: BetSelection[] } = {};
@@ -174,6 +176,8 @@ const BetSlipComponent = ({
               handleIncrease={handleIncrease}
               handleMultiStakeChange={handleMultiStakeChange}
               stake={multiStake}
+              error={error}
+              setError={setError}
             />
           ))}
           {selections.length > 0 && (
@@ -186,8 +190,14 @@ const BetSlipComponent = ({
             />
           )}
         </DialogContent>
+        {error.length > 0 && (
+          <h5 style={{ color: "red" }}>
+            please resolve all errors before placing bet
+          </h5>
+        )}
         <DialogActions>
           <Button
+            disabled={selections.length === 0 || error.length > 0}
             onClick={handleSubmitBet}
             variant="contained"
             fullWidth={true}
