@@ -1,29 +1,27 @@
-// SportSelectionBar.tsx
 import React, { useState, useEffect, useRef } from "react";
-import { Button, Tooltip, IconButton } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Event } from "../../types/contextTypes";
+
 import "./SportSelectionBar.css";
 
 interface SportSelectionBarProps {
   selectedSport: string;
-  eventsData: { [key: string]: any };
+  eventsData: { [key: string]: Event[] };
   onSelectSport: (sport: string) => void;
-  onSelectEvent: (eventId: string) => void;
 }
 
 const SportSelectionBar: React.FC<SportSelectionBarProps> = ({
   selectedSport,
   eventsData,
   onSelectSport,
-  onSelectEvent,
 }) => {
   const sports = ["All", ...Object.keys(eventsData)];
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [, setCurrentIndex] = useState(0);
   const sportScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Scroll to the selected item position when it changes
     if (sportScrollRef.current) {
       const selectedItem = sportScrollRef.current.querySelector(
         `.sportButton[data-sport="${selectedSport}"]`,
@@ -57,7 +55,7 @@ const SportSelectionBar: React.FC<SportSelectionBarProps> = ({
       return (
         <Tooltip title={sportType} key={sportType}>
           <button
-            className={`sportButton ${isSelected ? "selected" : ""}`}
+            className={`sportButton ${isSelected ? "selected" : "notSelected"}`}
             onClick={() => onSelectSport(sportType)}
             data-sport={sportType}
           >
@@ -69,9 +67,7 @@ const SportSelectionBar: React.FC<SportSelectionBarProps> = ({
   };
 
   return (
-    <div
-      className="sportSelectionContainer"
-    >
+    <div className="sportSelectionContainer">
       <div onClick={() => rotateSports("left")} className="arrowButton left">
         <ArrowBackIosIcon />
       </div>

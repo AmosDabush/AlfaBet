@@ -1,9 +1,8 @@
 import "./App.css";
-import { BetSlipProvider } from "./contexts/BetSlipContext";
+import { BetSlipProvider } from "./contexts/BetSlipContextProvider";
 import MainPage from "./pages/MainPage";
 
 function App() {
-
   return (
     <BetSlipProvider>
       <MainPage />

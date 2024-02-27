@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { useBetSlip } from "../../contexts/BetSlipContext";
+import { useBetSlip } from "../../contexts/useBetSlip";
 import { BetSelection } from "../../types/contextTypes";
+import { TransitionProps } from "@mui/material/transitions";
+import { calculateTotalOdds } from "../../helpers/helpers";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
 import Slide from "@mui/material/Slide";
-import { TransitionProps } from "@mui/material/transitions";
 import FooterComponent from "../FooterComponent/FooterComponent";
-import SingleBetComponent from "./SingleBetComponent/SingleBetsComponent";
 import MultiBetComponent from "./MultiBetComponent/MultiBetComponent";
-import "./BetSlipComponent.css";
 import ReceiptDialog from "./ReceiptDialog/ReceiptDialog";
-import { calculateTotalOdds } from "../../helpers/helpers";
+import CollapsibleSection from "./CollapsibleSection/CollapsibleSection";
+import "./BetSlipComponent.css";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement },
@@ -45,7 +45,8 @@ const BetSlipComponent = ({
     | {
         [key: string]: string | number | { [key: string]: string | number };
       }
-    | any
+    | object
+    | null
   >(null);
   const handleRemoveSelection = (optionId: string) => {
     removeSelection(optionId);
@@ -175,23 +176,23 @@ const BetSlipComponent = ({
               stake={multiStake}
             />
           ))}
-          <div className="multiBetHeader smallerText">
-            <button className="ctaButton">singles</button>
-          </div>
-          {selections.map((selection: BetSelection, index: number) => (
-            <SingleBetComponent
-              key={index}
-              selection={selection}
-              index={index}
+          {selections.length > 0 && (
+            <CollapsibleSection
+              selections={selections}
               handleRemoveSelection={handleRemoveSelection}
               handleDecreaseS={handleDecreaseS}
               handleIncreaseS={handleIncreaseS}
               handleStakeChange={handleStakeChange}
             />
-          ))}
+          )}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleSubmitBet} color="primary">
+          <Button
+            onClick={handleSubmitBet}
+            variant="contained"
+            fullWidth={true}
+            color="success"
+          >
             Place Bet
           </Button>
         </DialogActions>

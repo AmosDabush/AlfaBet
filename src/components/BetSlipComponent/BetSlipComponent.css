@@ -9,7 +9,6 @@
 .multiBetHeader {
     background-color: #ff0000;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     color: white;
     padding: 2px;

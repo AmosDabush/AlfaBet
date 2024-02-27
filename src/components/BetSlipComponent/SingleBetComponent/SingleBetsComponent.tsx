@@ -56,7 +56,7 @@ const SingleBetComponent: React.FC<SingleBetProps> = ({
           <input
             type="text"
             className="form-control"
-            value={selection.stake ?? ""}
+            value={selection.stake ?? "0"}
             onChange={(e) => handleStakeChange(e, selection.optionId)}
           />
           <button

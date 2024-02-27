@@ -28,7 +28,7 @@ function CustomNumberInput({
 }: CustomNumberInputProps) {
   const eventId = selection.eventId;
   const optionId = selection.optionId;
-  const index = selection.index; // Assuming index is a property of the selection object
+  const index = selection.index;
 
   return (
     <TextField

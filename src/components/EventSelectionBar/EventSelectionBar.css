@@ -44,14 +44,18 @@
     color: #000000;
     cursor: pointer;
     transition: color 0.3s;
+    display: none;
+    position: absolute;
 }
 
 .arrowBtn.left {
-    position: absolute;
     left: 10px;
 }
 
 .arrowBtn.right {
-    position: absolute;
     right: 10px;
+}
+
+.eventSelectionContainer:hover .arrowBtn {
+    display: block;
 }

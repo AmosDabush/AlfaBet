@@ -1,4 +1,4 @@
-import { useBetSlip } from "../../contexts/BetSlipContext";
+import { useBetSlip } from "../../contexts/useBetSlip";
 import Button from "@mui/material/Button";
 import "./FooterComponent.css";
 const FooterComponent = ({
@@ -10,7 +10,7 @@ const FooterComponent = ({
 }) => {
   const { selections } = useBetSlip();
 
-  if (selections.length === -10) return null; // Don't display if no selections
+  if (selections.length === -10) return null;
 
   const totalOdds = selections.reduce(
     (acc, selection) => acc * selection.odds,

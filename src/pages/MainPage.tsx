@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { useBetSlip } from "../contexts/BetSlipContext";
+import { useBetSlip } from "../contexts/useBetSlip";
+import { BetSelection } from "../types/contextTypes";
 import BetSlipComponent from "../components/BetSlipComponent/BetSlipComponent";
 import FooterComponent from "../components/FooterComponent/FooterComponent";
-import SportSelectionBar from "../components/SportSelectionBar/SportSelectionBar"; // Adjust the path
-import EventSelectionBar from "../components/EventSelectionBar/EventSelectionBar"; // Adjust the path
-import EventsDisplay from "../components/EventsDisplay/EventsDisplay"; // Adjust the path
-import { BetSelection } from "../types/contextTypes";
-import "./MainPage.css";
+import SportSelectionBar from "../components/SportSelectionBar/SportSelectionBar";
+import EventSelectionBar from "../components/EventSelectionBar/EventSelectionBar";
+import EventsDisplay from "../components/EventsDisplay/EventsDisplay";
 import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
+import "./MainPage.css";
 const MainPage = () => {
   const [betSlipOpen, setBetSlipOpen] = useState(false);
   const { eventsData, addSelection, selections } = useBetSlip();
@@ -42,7 +42,6 @@ const MainPage = () => {
           selectedSport={selectedSport}
           eventsData={eventsData}
           onSelectSport={setSelectedSport}
-          onSelectEvent={setSelectedEvent}
         />
         <EventSelectionBar
           selectedSport={selectedSport}

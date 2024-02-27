@@ -10,7 +10,7 @@ import {
 interface ReceiptDialogProps {
   open: boolean;
   onClose: () => void;
-  receiptData: { [key: string]: string | number } | null;
+  receiptData: { [key: string]: string | number } | null | object;
 }
 
 const ReceiptDialog: React.FC<ReceiptDialogProps> = ({
@@ -46,7 +46,10 @@ const ReceiptDialog: React.FC<ReceiptDialogProps> = ({
                   <ul>
                     {Object.entries(value).map(([nestedKey, nestedValue]) => (
                       <li key={nestedKey}>
-                        {nestedKey} <span style={{ color: "green" }}>stake:{(nestedValue as string)}</span> 
+                        {nestedKey}{" "}
+                        <span style={{ color: "green" }}>
+                          stake:{nestedValue as string}
+                        </span>
                       </li>
                     ))}
                   </ul>

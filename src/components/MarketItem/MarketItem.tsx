@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Market, BetSelection } from "../../types/contextTypes";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import "./MarketItem.css"; // Assuming you saved the CSS in MarketItem.css
+import "./MarketItem.css";
 
 interface MarketItemProps {
   market: Market;

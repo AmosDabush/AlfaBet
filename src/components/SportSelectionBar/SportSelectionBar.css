@@ -56,6 +56,7 @@
 }
 
 .arrowButton {
+    display: none; /* Initially hide the arrow buttons */
     position: absolute;
     top: 25px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -79,4 +80,8 @@
 .arrowButton:hover, .arrowButton:focus {
     color: #3c3c3c;
     transform: none;
+}
+
+.sportSelectionContainer:hover .arrowButton {
+    display: block; /* Show the arrow buttons on hover */
 }

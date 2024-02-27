@@ -1,7 +1,6 @@
-// EventItem.tsx
 import React, { useState } from "react";
 import MarketItem from "../MarketItem/MarketItem";
-import { Event, BetSelection } from "../../types/contextTypes"; // Import your types
+import { Event, BetSelection } from "../../types/contextTypes";
 import "./EventItem.css";
 
 interface EventItemProps {
@@ -15,17 +14,21 @@ const EventItem: React.FC<EventItemProps> = ({
   selections,
   handleAddSelection,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false); // State to control the collapsed sections
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const toggleCollapse = () => setIsCollapsed(!isCollapsed); // Function to toggle the collapse
+  const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   return (
     <div className="event-item">
       <h2 onClick={toggleCollapse} style={{ cursor: "pointer" }}>
-        <span className={`collapse-indicator ${isCollapsed ? 'collapsed' : ''}`}>&#x25B6;</span>
+        <span
+          className={`collapse-indicator ${isCollapsed ? "collapsed" : ""}`}
+        >
+          &#x25B6;
+        </span>
         {event.eventName}
       </h2>
-      {isCollapsed ? null : ( // Render the content conditionally based on isCollapsed state
+      {isCollapsed ? null : (
         <div>
           {event.markets.map((market) => (
             <MarketItem

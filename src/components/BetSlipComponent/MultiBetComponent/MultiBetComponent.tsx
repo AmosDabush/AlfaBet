@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { BetSelection } from "../../../types/contextTypes";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./MultiBetComponent.css";
 
 interface MultiBetProps {
@@ -21,6 +22,8 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
   handleMultiStakeChange,
   stake,
 }) => {
+  const [collapsed, setCollapsed] = useState(false);
+
   if (eventSelections.length <= 1) {
     return null;
   }
@@ -30,59 +33,67 @@ const MultiBetComponent: React.FC<MultiBetProps> = ({
     1,
   );
 
+  const toggleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
-    <div
-      className="multiBetContainer"
-      style={{ justifyContent: "space-between" }}
-    >
-      <div className="multiBetHeader smallerText">
+    <div className={`multiBetContainer ${collapsed ? "collapsed" : ""}`}>
+      <div className="multiBetHeader smallerText" onClick={toggleCollapse}>
+        <span className={`arrow ${collapsed ? "collapse" : ""}`}>
+          <ArrowForwardIosIcon sx={{ width: "18px" }} />
+        </span>
         <button className="ctaButton">CREATE YOUR BET</button>
       </div>
-      <span className="selectionCount">
-        <div className="cta-button">CYB</div> &nbsp; {eventSelections.length}{" "}
-        SELECTIONS
-        <span className="totalOdds"> Odds: {totalOdds.toFixed(2)}</span>
-      </span>
-      <ul className="timeline">
-        {eventSelections.map((selection, sIndex) => (
-          <li key={sIndex} className="timeline-item">
-            <div className="timeline-icon-wrapper">
-              <div className="timeline-icon">-</div>
-            </div>
-            <div className="timeline-content">
-              <div className="betDetails">
-                <div className="betMatch">{selection.name}</div>
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <IconButton
-        style={{ float: "right", marginTop: "-25px", marginRight: "10px" }}
-        className="removeAllButton"
-        onClick={() =>
-          eventSelections.forEach((selection) =>
-            handleRemoveSelection(selection.optionId),
-          )
-        }
-      >
-        <DeleteIcon />
-      </IconButton>
-      <div className="input-group">
-        <button className="input-group-btn" onClick={handleDecrease}>
-          -
-        </button>
-        <span className="dollarSymbol">$</span>
-        <input
-          type="text"
-          className="form-control"
-          value={stake}
-          onChange={(e) => handleMultiStakeChange(e)}
-        />
-        <button className="input-group-btn" onClick={handleIncrease}>
-          +
-        </button>
-      </div>
+      {!collapsed && (
+        <>
+          <span className="selectionCount">
+            <div className="cta-button">CYB</div> &nbsp;{" "}
+            {eventSelections.length} SELECTIONS
+            <span className="totalOdds"> Odds: {totalOdds.toFixed(2)}</span>
+          </span>
+          <ul className="timeline">
+            {eventSelections.map((selection, sIndex) => (
+              <li key={sIndex} className="timeline-item">
+                <div className="timeline-icon-wrapper">
+                  <div className="timeline-icon">-</div>
+                </div>
+                <div className="timeline-content">
+                  <div className="betDetails">
+                    <div className="betMatch">{selection.name}</div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <IconButton
+            style={{ float: "right", marginTop: "-25px", marginRight: "10px" }}
+            className="removeAllButton"
+            onClick={() =>
+              eventSelections.forEach((selection) =>
+                handleRemoveSelection(selection.optionId),
+              )
+            }
+          >
+            <DeleteIcon />
+          </IconButton>
+          <div className="input-group">
+            <button className="input-group-btn" onClick={handleDecrease}>
+              -
+            </button>
+            <span className="dollarSymbol">$</span>
+            <input
+              type="text"
+              className="form-control"
+              value={stake}
+              onChange={(e) => handleMultiStakeChange(e)}
+            />
+            <button className="input-group-btn" onClick={handleIncrease}>
+              +
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

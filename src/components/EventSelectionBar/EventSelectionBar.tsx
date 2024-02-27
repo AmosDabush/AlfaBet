@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Button, Tooltip } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import { Event } from "../../types/contextTypes"; // Import your Event type
 import "./EventSelectionBar.css"; // Import your CSS file
 
