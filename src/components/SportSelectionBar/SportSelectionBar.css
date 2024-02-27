@@ -14,10 +14,10 @@
     position: relative;
     flex-direction: row;
     background-color: #ffffff;
-    overflow-x: hidden;
+    overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: 0px;
-    scrollbar-color: #888 #333;
+    scrollbar-color: #88888800 #ffffff;
 }
 
 .sportScrollContainer::-webkit-scrollbar {
@@ -25,7 +25,7 @@
 }
 
 .sportScrollContainer::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: #843030;
     border-radius: 6px;
 }
 
